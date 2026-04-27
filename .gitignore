@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.env
+venv/
+.venv/
+
+# Model (large file — use Git LFS or host separately)
+# laptop_price_model.pkl  ← uncomment if >100MB
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env
+
+# Misc
+.DS_Store
+*.log
+.ipynb_checkpoints/
