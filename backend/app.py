@@ -1,6 +1,8 @@
 import os
 import pickle
 import numpy as np
+import traceback
+import pandas as pd
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -46,7 +48,6 @@ def predict():
         if not data:
             return jsonify({"status": "error", "message": "No JSON data received"}), 400
         features = build_input(data)
-        import pandas as pd
         df = pd.DataFrame([features])
         try:
             price = round(float(np.expm1(model.predict(df)[0])), 2)
@@ -54,6 +55,7 @@ def predict():
             price = round(float(np.expm1(model.predict(df.values)[0])), 2)
         return jsonify({"status": "success", "predicted_price": price})
     except Exception as e:
+        traceback.print_exc()
         return jsonify({"status": "error", "message": str(e)}), 400
 
 @app.route("/")

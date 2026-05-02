@@ -53,9 +53,16 @@ export default function LaptopPricePredictor() {
         }),
       })
 
-      if (!resp.ok) throw new Error(`Server error: ${resp.status}`)
+      let data;
+      try {
+        data = await resp.json();
+      } catch (err) {
+        data = null;
+      }
 
-      const data = await resp.json()
+      if (!resp.ok) {
+        throw new Error(data && data.message ? data.message : `Server error: ${resp.status}`);
+      }
 
       if (data.status === "success") {
         setPrice(data.predicted_price)
