@@ -24,11 +24,11 @@ NUMERIC_COLS = [
     "Is_Gaming", "Is_Ultrabook", "Ram_x_GHz", "SSD_ratio",
 ]
 
-COMPANY_CATS    = ["Acer","Apple","Asus","Dell","Google","HP","Huawei",
+COMPANY_CATS    = ["Acer","Apple","Asus","Chuwi","Dell","Fujitsu","Google","HP","Huawei",
                    "LG","Lenovo","MSI","Mediacom","Microsoft","Razer",
                    "Samsung","Toshiba","Vero","Xiaomi"]
 TYPENAME_CATS   = ["2 in 1 Convertible","Gaming","Netbook","Notebook","Ultrabook","Workstation"]
-CPUBRAND_CATS   = ["AMD","Intel","Samsung"]
+CPUBRAND_CATS   = ["AMD","Intel"]
 GPUBRAND_CATS   = ["AMD","ARM","Intel","Nvidia"]
 OPSYS_CATS      = ["Chrome OS","Linux","Mac OS X","No OS",
                    "Windows 10","Windows 10 S","Windows 11","Windows 7","macOS"]
